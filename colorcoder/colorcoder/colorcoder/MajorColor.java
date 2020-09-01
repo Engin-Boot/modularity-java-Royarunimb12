@@ -1,3 +1,5 @@
+package colorcoder;
+
 public enum MajorColor {
     WHITE(0),
     RED(1),

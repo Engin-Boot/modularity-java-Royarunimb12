@@ -1,4 +1,4 @@
-package colorcoder.*;
+package colorcoder;
 
 
 public class Main {
