@@ -3,48 +3,18 @@ package colorcoder.*;
 
 public class Main {
     
-    final static String MajorColorNames[] = {
-        "White", "Red", "Black", "Yellow", "Violet"
-    };
-    final static int numberOfMajorColors = MajorColorNames.length;
-    final static String MinorColorNames[] = {
-        "Blue", "Orange", "Green", "Brown", "Slate"
-    };
-    final static int numberOfMinorColors = MinorColorNames.length;
+   
 
-    static class ColorPair {
-        private MajorColor majorColor;
-        private MinorColor minorColor;
-        
-        public ColorPair(MajorColor major, MinorColor minor)
-        {
-            majorColor = major;
-            minorColor = minor;
-        }
-        public MajorColor getMajor() {
-            return majorColor;
-        }
-        public MinorColor getMinor() {
-            return minorColor;
-        }
-        String ToString() {
-            String colorPairStr = MajorColorNames[majorColor.getIndex()];
-            colorPairStr += " ";
-            colorPairStr += MinorColorNames[minorColor.getIndex()];
-            return colorPairStr;
-        }
-    };
-
-    static ColorPair GetColorFromPairNumber(int pairNumber) {
+   static ColorPair GetColorFromPairNumber(int pairNumber) {
         int zeroBasedPairNumber = pairNumber - 1;
         MajorColor majorColor = 
-            MajorColor.fromIndex(zeroBasedPairNumber / numberOfMinorColors);
+            MajorColor.fromIndex(zeroBasedPairNumber / ColorNames.numberOfMinorColors);
         MinorColor minorColor =
-            MinorColor.fromIndex(zeroBasedPairNumber % numberOfMinorColors);
+            MinorColor.fromIndex(zeroBasedPairNumber % ColorNames.numberOfMinorColors);
         return new ColorPair(majorColor, minorColor);
     }
     static int GetPairNumberFromColor(MajorColor major, MinorColor minor) {
-        return major.getIndex() * numberOfMinorColors + minor.getIndex() + 1;
+        return major.getIndex() * ColorNames.numberOfMinorColors + minor.getIndex() + 1;
     }
 
     static void testNumberToPair(int pairNumber,
