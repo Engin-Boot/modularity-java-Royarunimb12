@@ -1,6 +1,5 @@
-package colorcoder;
-import ./colorcoder/MajorColor;
-import ./colorcoder/MinorColor;
+package colorcoder.*;
+
 
 public class Main {
     
