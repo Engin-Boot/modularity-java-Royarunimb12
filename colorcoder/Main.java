@@ -1,4 +1,6 @@
 package colorcoder;
+import colorcoder.MajorColor;
+import colorcoder.MinorColor;
 
 public class Main {
     
